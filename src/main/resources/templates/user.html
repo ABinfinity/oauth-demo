@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+        }
+        img {
+            border-radius: 50%;
+            margin-bottom: 20px;
+            width: 150px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+<h1>Welcome, <span th:text="${name}">User</span>!</h1>
+<img th:src="${picture} ?: ${avatar_url}" alt="Profile Picture"/>
+<p>Email: <span th:text="${email}">Email Not Available</span></p>
+<p>
+    You are logged in with:
+    <span style="color: green; font-weight: bold;" th:text="${source}">Provider</span>
+</p>
+
+</body>
+</html>

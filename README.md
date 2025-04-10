@@ -40,5 +40,50 @@ git clone https://github.com/your-username/oauth2-demo.git
 cd oauth2-demo
 ```
 
+### 2. Configure OAuth apps
+👉 Google
+- Go to Google Developer Console.
+
+- Create a new OAuth 2.0 Client ID.
+
+- Set Authorized Redirect URI to:
+
+```bash
+http://localhost:8080/login/oauth2/code/google
+```
+
+👉 GitHub
+- Go to GitHub Developer Settings.
+
+- Create a new OAuth App.
+
+- Set Authorization callback URL to:
+
+``` bash
+http://localhost:8080/login/oauth2/code/github
+```
+### 3. Update application.yml
+``` yaml
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: YOUR_GOOGLE_CLIENT_ID
+            client-secret: YOUR_GOOGLE_CLIENT_SECRET
+          github:
+            client-id: YOUR_GITHUB_CLIENT_ID
+            client-secret: YOUR_GITHUB_CLIENT_SECRET
+
+```
+
+### 4. Run the app
+```bash
+./mvnw spring-boot:run
+Visit: http://localhost:8080
+```
+
+
 ## Credit
 - Telusko tutorials --> https://www.youtube.com/watch?v=xAaGxhDiGg8

@@ -38,3 +38,7 @@ This is a simple Spring Boot project demonstrating **OAuth2 login** with **Googl
 ```bash
 git clone https://github.com/your-username/oauth2-demo.git
 cd oauth2-demo
+```
+
+## Credit
+- Telusko tutorials --> https://www.youtube.com/watch?v=xAaGxhDiGg8
